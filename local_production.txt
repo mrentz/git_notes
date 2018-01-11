@@ -1,5 +1,5 @@
-PG::ConnectionBad (FATAL:  Peer authentication failed for user "video-store"
 ActiveRecord::NoDatabaseError (FATAL:  role "video-store" does not exist
+PG::ConnectionBad (FATAL:  Peer authentication failed for user "video-store"
 ActiveRecord::NoDatabaseError (FATAL:  database "video-store_production" does not exist
 
 $createuser video-store
