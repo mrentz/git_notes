@@ -1,3 +1,8 @@
+$RAILS_ENV=production rake secret
+$sudo emacs /etc/profile
+$source /etc/profile
+RAILS_ENV=production rails s
+
 ActiveRecord::NoDatabaseError (FATAL:  role "video-store" does not exist
 PG::ConnectionBad (FATAL:  Peer authentication failed for user "video-store"
 ActiveRecord::NoDatabaseError (FATAL:  database "video-store_production" does not exist
@@ -15,8 +20,15 @@ $rails s -e production
 check to make sure assets are being served from the public directory
 Ruby on Rails-Railscasts PRO #341 (3:00min mark)
 
-#<RuntimeError: Missing `secret_key_base` for 'production' environment, set this value in `config/secrets.yml`>
+************************************************************************
 
+#<RuntimeError: Missing `secret_key_base` for 'production' environment,
+set this value in `config/secrets.yml`
+
+$RAILS_ENV=production rake secret
+$sudo emacs /etc/profile
+$source /etc/profile
+RAILS_ENV=production rails s
 https://stackoverflow.com/questions/23180650/how-to-solve-error-missing-secret-key-base-for-production-environment-rails
 
 ***********************************************************************8
