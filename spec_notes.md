@@ -1,0 +1,31 @@
+
+installed and configured Postgresql for development and test
+
+installed and configured test suite. Successfully implementing and applying
+    rspec
+    capybara
+    factory girl
+    database cleaner
+  
+
+***** Testing ******
+Setup for Rspec Capybara
+https://stackoverflow.com/questions/15148585/undefined-method-visit-when-using-rspec-and-capybara-in-rails
+
+subject(:hero) { Hero.first }
+it "carries a sword" do
+  expect(hero.equipment).to include "sword"
+end
+
+************Using factory_bot******************
+Configure your test suite
+RSpec
+
+# spec/support/factory_bot.rb
+RSpec.configure do |config|
+  config.include FactoryBot::Syntax::Methods
+end
+
+
+************Setup Guard to watch a directory**
+
