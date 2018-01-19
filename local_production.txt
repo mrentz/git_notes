@@ -1,11 +1,23 @@
+
+<RuntimeError: Missing `secret_key_base` for 'production' environment,
+ActiveRecord::NoDatabaseError (FATAL:  role "video-store" does not exist)
+PG::ConnectionBad (FATAL:  Peer authentication failed for user "video-store"
+ActiveRecord::NoDatabaseError (FATAL:  database "video-store_production" does not exist
+PG::InsufficientPrivilege: ERROR: permission denied to create database
+
+
+***********************************************************************
+
+<RuntimeError: Missing `secret_key_base` for 'production' environment,
+
 $RAILS_ENV=production rake secret
 $sudo emacs /etc/profile
 $source /etc/profile
 RAILS_ENV=production rails s
 
-ActiveRecord::NoDatabaseError (FATAL:  role "video-store" does not exist
-PG::ConnectionBad (FATAL:  Peer authentication failed for user "video-store"
-ActiveRecord::NoDatabaseError (FATAL:  database "video-store_production" does not exist
+***********************************************************************
+
+ActiveRecord::NoDatabaseError (FATAL:  role "video-store" does not exist)
 
 $createuser video-store
 $psql
@@ -23,6 +35,7 @@ Ruby on Rails-Railscasts PRO #341 (3:00min mark)
 ************************************************************************
 
 #<RuntimeError: Missing `secret_key_base` for 'production' environment,
+
 set this value in `config/secrets.yml`
 
 $RAILS_ENV=production rake secret
@@ -34,7 +47,6 @@ https://stackoverflow.com/questions/23180650/how-to-solve-error-missing-secret-k
 ***********************************************************************8
 
 PostgreSQL Database: PG::ConnectionBad: FATAL: Peer authentication failed for user
-	
 
 If, when working on a Linux machine of the Ubuntu flavor and setting up a PostgreSQL 9.3 database, you run into the error ‘PG::ConnectionBad: FATAL: Peer authentication failed for user’ when trying to connect to a database from a web application (Rails, PHP, Node, etc.), you are more than likely running into local socket connection permissions within PostgreSQL. The most common fix for this error in a development or staging environment is to loosen the local permissions up a bit.
 
@@ -44,3 +56,11 @@ How To:
 3. directly below that you will find ‘local all all peer’ change it to ‘local all all trust’
 4. save and close the file
 5. restart the PostgreSQL server (sudo service postgresql restart)
+
+************************************************************************
+
+PG::InsufficientPrivilege: ERROR: permission denied to create database
+
+$ psql -U postgres
+postgres=# ALTER USER dracos CREATEDB;
+(postgres=# ALTER USER "username" CREATEDB;)
