@@ -27,5 +27,29 @@ RSpec.configure do |config|
 end
 
 
-************Setup Guard to watch a directory**
+*********Setup Guard to watch a directory******
+
+
+
+********* Using Capybara with Webkit **********
+
+Be prepared for a bit of a challenge!
+
+sudo apt-get upgrade
+sudo apt-get update
+sudo apt-get install qt5-default libqt5webkit5-dev gstreamer1.0-plugins-base gstreamer1.0-tools gstreamer1.0-x
+
+gem "capybara-webkit"                  #Gemfile
+
+require 'capybara/rspec'               #spec_helper.rb
+Capybara.javascript_driver = :webkit   #spec_helper.rb
+
+
+Capybara::Webkit.configure do |config| #rails_helper.rb 
+    # Allow pages to make requests to
+    any URL without issuing a warning.
+  config.allow_unknown_urls
+end
+
+it "should whatever", :type => :feature, :driver => :webkit, :js => true do
 
