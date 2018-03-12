@@ -1,0 +1,8 @@
+***** SSH into EC2 Instance ******
+
+ssh -i ~/Jesses-vm.pem ubuntu@ec2-54-190-60-38.us-west-2.compute.amazonaws.com
+
+
+***** SSH into GCP Instance ******
+
+ssh matthew_rentz@35.196.42.220

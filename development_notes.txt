@@ -1,0 +1,34 @@
+****************** Setup Postgres ******
+
+rails new video-store --database=postgresql
+
+****************** Setup Git ******
+
+****************** Setup Heroku ******
+
+https://gist.github.com/JennDudley/2493288
+
+check for existing heroku repo
+
+first add the following lines to Gemfile
+
+group :production do
+gem 'pg', '0.18.4'
+end
+
+~$ bundle install
+
+from the Rails project dir after pushing to Github
+
+~$ heroku create <name>
+~$ git push heroku master
+~$ heroku run rails db:migrate
+
+***************** Setup ElasticSearch (on EC2 free teir) *****
+ssh -i ~/Jesses-vm.pem ubuntu@ec2-54-190-60-38.us-west-2.compute.amazonaws.com    
+https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html
+sudo emacs /etc/elasticsearch/jvm.options
+
+https://rubyplus.com/articles/3961-Full-Text-Search-using-ElasticSearch-in-Rails-5
+
+https://www.sitepoint.com/full-text-search-rails-elasticsearch/
