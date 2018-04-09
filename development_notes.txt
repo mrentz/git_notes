@@ -23,10 +23,22 @@ from the Rails project dir after pushing to Github
 ~$ heroku create <name>
 ~$ git push heroku master
 ~$ heroku run rails db:migrate
+heroku dreate --remote staging <name>
+git push staging master
+heroku restart --remote staging
+heroku logs --remote staging
+git push staging master
+heroku rake db:migrate --remote staging
+heroku restart --remote staging
 
 ***************** Setup ElasticSearch (on EC2 free teir) *****
-ssh -i ~/Jesses-vm.pem ubuntu@ec2-54-190-60-38.us-west-2.compute.amazonaws.com    
+
+curl http://ec2-54-190-60-38.us-west-2.compute.amazonaws.com:9200
+ssh -i ~/Jesses-vm.pem ubuntu@ec2-54-190-60-38.us-west-2.compute.amazonaws.com
+
+https://askubuntu.com/questions/848173/how-to-install-elasticsearch-on-16-04-lts
 https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html
+
 sudo emacs /etc/elasticsearch/jvm.options
 
 https://rubyplus.com/articles/3961-Full-Text-Search-using-ElasticSearch-in-Rails-5

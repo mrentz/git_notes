@@ -1,0 +1,15 @@
+
+***** Capybara Webkit ******
+
+Running on Debian headless in the cloud
+
+    Capybara::Webkit::ConnectionError:
+       /home/matthew_rentz/.rvm/gems/ruby-2.4.1/gems/capybara-webkit-1.14.0/bin/webkit_server failed to start.
+
+sudo apt-get update
+sudo apt-get install qt5-default libqt5webkit5-dev gstreamer1.0-plugins-base gstreamer1.0-tools gstreamer1.0-x
+sudo apt-get install libgtkmm-3.0
+sudo apt-get install libnotify-dev
+
+sudo apt-get install xvfb
+xvfb-run -a rspec spec/requests/video_spec.rb 

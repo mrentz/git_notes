@@ -1,0 +1,7 @@
+install cli
+
+~$ wget -qO- https://cli-assets.heroku.com/install-ubuntu.sh | sh
+
+the staging repo
+
+~$ heroku git:remote -a matthews-video-store-staging --remote staging
